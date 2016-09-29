@@ -31,3 +31,10 @@ apt-get install openssh-server #INSTALA O SERVIÇO
 sed -i "5s/Port 22/Porta 1000/" /etc/ssh/sshd_config #ALTERA A LINHA 5 DO ARQUIVO SSHD_CONFIG
 
 service openssh restart #REINICIA O SERVIÇO DE SSH
+
+echo "Informe o ip da maquina remota"
+read ip_remote
+
+echo "Informe nome do usuario remoto"
+read user_remote
+ssh $user_remote@$ip_remote
